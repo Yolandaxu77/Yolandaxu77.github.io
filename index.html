@@ -1,209 +1,553 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ying Xu | Global QPM</title>
+<title>Ying Xu | Quality Governance & AI Transformation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+:root{
+  --primary:#0067B8;
+  --dark:#0A192F;
+  --light:#F7F9FC;
+  --text:#334155;
+  --accent:#14B8A6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    font-family:Segoe UI, Arial, sans-serif;
-    line-height:1.6;
-    color:#333;
-    background:#f5f7fa;
-}
-
-header{
-    background:linear-gradient(135deg,#0067b8,#0f4c81);
-    color:white;
-    padding:80px 20px;
-    text-align:center;
-}
-
-header h1{
-    font-size:48px;
-    margin-bottom:10px;
-}
-
-header p{
-    font-size:20px;
-    opacity:0.9;
+  font-family:'Inter',sans-serif;
+  background:white;
+  color:var(--text);
+  line-height:1.6;
 }
 
 .container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-    padding:40px 0;
+  width:90%;
+  max-width:1200px;
+  margin:auto;
 }
 
-.card{
-    background:white;
-    border-radius:12px;
-    padding:30px;
-    margin-bottom:25px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+section{
+  padding:90px 0;
+}
+
+h1,h2,h3{
+  color:var(--dark);
 }
 
 h2{
-    color:#0067b8;
-    border-bottom:2px solid #e5e5e5;
-    padding-bottom:8px;
+  font-size:2rem;
+  margin-bottom:20px;
 }
 
-ul{
-    padding-left:20px;
+p{
+  font-size:1rem;
 }
 
-.skill{
-    display:inline-block;
-    background:#0067b8;
-    color:white;
-    padding:8px 14px;
-    margin:5px;
-    border-radius:20px;
-    font-size:14px;
+.btn{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  margin-right:12px;
 }
 
-footer{
-    text-align:center;
-    padding:20px;
-    color:#777;
+.btn-primary{
+  background:var(--primary);
+  color:white;
 }
 
-a{
-    color:#0067b8;
-    text-decoration:none;
+.btn-secondary{
+  border:1px solid #dce3ea;
+  color:var(--dark);
 }
 
-a:hover{
-    text-decoration:underline;
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(
+      135deg,
+      #f6faff 0%,
+      #ffffff 50%,
+      #eef5ff 100%
+  );
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.tag{
+  display:inline-block;
+  background:#E8F2FF;
+  color:var(--primary);
+  padding:8px 16px;
+  border-radius:30px;
+  font-weight:600;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:3.5rem;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:1.2rem;
+  color:#475569;
+  margin-bottom:30px;
+  max-width:640px;
+}
+
+.profile-card{
+  background:white;
+  padding:40px;
+  border-radius:24px;
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.profile-card h3{
+  margin-bottom:10px;
+}
+
+.profile-card p{
+  margin-bottom:10px;
+}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.card h3{
+  margin-bottom:12px;
+}
+
+.stats{
+  background:var(--light);
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.stat{
+  text-align:center;
+}
+
+.stat-number{
+  font-size:2.5rem;
+  font-weight:700;
+  color:var(--primary);
+}
+
+.framework{
+  border-top:4px solid var(--primary);
+}
+
+.insights{
+  background:var(--light);
+}
+
+.article{
+  background:white;
+  padding:24px;
+  border-radius:18px;
+}
+
+.footer{
+  background:var(--dark);
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+}
+
+.footer a{
+  color:#7dd3fc;
+  text-decoration:none;
+}
+
+@media(max-width:900px){
+
+.hero-grid{
+  grid-template-columns:1fr;
+}
+
+.stats-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.hero h1{
+  font-size:2.5rem;
+}
+
 }
 
 </style>
-
 </head>
+
 <body>
 
-<header>
-    <h1>Ying Xu</h1>
-    <p>
-        Global Quality Program Manager | Process Lead | PMO
-    </p>
-</header>
+<!-- HERO -->
+
+<section class="hero">
 
 <div class="container">
+<div class="hero-grid">
 
-    <div class="card">
-        <h2>About Me</h2>
+<div>
 
-        <p>
-        I am a Global Quality Program Manager and Process Lead with experience in
-        quality governance, operational excellence, program management, and digital transformation.
-        Based in Shanghai, I work with global stakeholders to improve business processes,
-        governance frameworks, and quality systems.
-        </p>
+<div class="tag">
+Global Quality Governance • AI Transformation
+</div>
 
-    </div>
+<h1>
+Ying Xu
+</h1>
 
-    <div class="card">
-        <h2>Professional Focus</h2>
+<p>
+Global Quality Program Manager focused on governance,
+operational excellence, knowledge management and
+AI-enabled transformation at scale.
+</p>
 
-        <ul>
-            <li>Quality Management Systems (QMS)</li>
-            <li>Program Management Office (PMO)</li>
-            <li>Process Governance</li>
-            <li>Operational Excellence</li>
-            <li>Audit & Compliance</li>
-            <li>AI Adoption and Automation</li>
-        </ul>
+<a href="#frameworks" class="btn btn-primary">
+View Frameworks
+</a>
 
-    </div>
-
-    <div class="card">
-
-        <h2>Skills</h2>
-
-        <span class="skill">PMO</span>
-        <span class="skill">Quality Management</span>
-        <span class="skill">Process Improvement</span>
-        <span class="skill">Governance</span>
-        <span class="skill">Data Analysis</span>
-        <span class="skill">Copilot</span>
-        <span class="skill">AI Agent</span>
-        <span class="skill">Automation</span>
-
-    </div>
-
-    <div class="card">
-
-        <h2>Certifications</h2>
-
-        <ul>
-            <li>PMP</li>
-            <li>ISO 42001 Lead Implementer (In Progress)</li>
-            <li>ISO 27001 auditor</li>
-            <li>CCSP</li>
-            <li>CISSP</li>
-            <li>CISA</li>
-            <li>CDMA</li>
-            <li>TOGAF</li>
-        </ul>
-
-    </div>
-
-    <div class="card">
-
-        <h2>Current Interests</h2>
-
-        <ul>
-            <li>Microsoft Copilot</li>
-            <li>AI Agent Development</li>
-            <li>Knowledge Management</li>
-            <li>Quality Analytics</li>
-            
-        </ul>
-
-    </div>
-
-    <div class="card">
-
-        <h2>Projects</h2>
-
-        <ul>
-            <li>Quality Governance Framework</li>
-            <li>PMO Process Optimization</li>
-            <li>AI-powered Student Error Analysis System (personal, ongoing)</li>
-        </ul>
-
-    </div>
-
-    <div class="card">
-
-        <h2>Contact</h2>
-
-        <p>
-            GitHub:
-            <a href="https://github.com/yolandaxu77">
-                github.com/Yolandaxu77
-            </a>
-        </p>
-
-        <p>
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/ying-xu-42a90a334/">
-                Ying Xu
-            </a>
-        </p>
-
-    </div>
+<a href="#ai-lab" class="btn btn-secondary">
+Explore AI Lab
+</a>
 
 </div>
 
-<footer>
-    © 2026 Ying Xu | Personal Website
-</footer>
+<div class="profile-card">
+
+<h3>Current Focus</h3>
+
+<p>Quality Governance</p>
+<p>Program Leadership</p>
+<p>AI Adoption Strategy</p>
+<p>Knowledge Management</p>
+<p>Operational Excellence</p>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- WHAT I DO -->
+
+<section>
+
+<div class="container">
+
+<h2>What I Do</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>Quality Governance</h3>
+
+<p>
+Designing scalable quality frameworks,
+review mechanisms, controls and
+continuous improvement systems.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Program Leadership</h3>
+
+<p>
+Leading cross-functional initiatives,
+stakeholder alignment and enterprise
+transformation programs.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>AI Transformation</h3>
+
+<p>
+Exploring Microsoft Copilot,
+AI agents and workflow automation
+for enterprise adoption.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- IMPACT -->
+
+<section class="stats">
+
+<div class="container">
+
+<h2>Impact Highlights</h2>
+
+<div class="stats-grid">
+
+<div class="stat">
+<div class="stat-number">15+</div>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<div class="stat-number">Global</div>
+<p>Stakeholder Network</p>
+</div>
+
+<div class="stat">
+<div class="stat-number">QMS</div>
+<p>Governance Initiatives</p>
+</div>
+
+<div class="stat">
+<div class="stat-number">AI</div>
+<p>Transformation Exploration</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FRAMEWORKS -->
+
+<section id="frameworks">
+
+<div class="container">
+
+<h2>Signature Frameworks</h2>
+
+<div class="card-grid">
+
+<div class="card framework">
+
+<h3>QMS Governance Framework</h3>
+
+<p>
+Stakeholder Matrix<br>
+Governance Rhythm<br>
+Escalation Model<br>
+Quality KPIs
+</p>
+
+</div>
+
+<div class="card framework">
+
+<h3>Process Adoption Framework</h3>
+
+<p>
+Discover<br>
+Design<br>
+Pilot<br>
+Scale<br>
+Optimize
+</p>
+
+</div>
+
+<div class="card framework">
+
+<h3>AI Adoption Framework</h3>
+
+<p>
+Use Cases<br>
+Risk Assessment<br>
+Governance Controls<br>
+Measurement & Learning
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AI LAB -->
+
+<section id="ai-lab">
+
+<div class="container">
+
+<h2>AI & Copilot Lab</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Knowledge Agent</h3>
+<p>Enterprise knowledge retrieval and decision support.</p>
+</div>
+
+<div class="card">
+<h3>PMO Assistant</h3>
+<p>Meeting intelligence, action tracking and documentation.</p>
+</div>
+
+<div class="card">
+<h3>Learning Agent</h3>
+<p>Student error analysis and knowledge reinforcement.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- INSIGHTS -->
+
+<section class="insights">
+
+<div class="container">
+
+<h2>Latest Insights</h2>
+
+<div class="card-grid">
+
+<div class="article">
+<h3>Why Governance Programs Fail</h3>
+<p>Exploring adoption challenges in global organizations.</p>
+</div>
+
+<div class="article">
+<h3>Measuring Quality Beyond Compliance</h3>
+<p>From audit readiness to business value.</p>
+</div>
+
+<div class="article">
+<h3>The Future of AI-Assisted PMO</h3>
+<p>How AI augments governance and program management.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LEARNING -->
+
+<section>
+
+<div class="container">
+
+<h2>Continuous Learning</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Certifications</h3>
+<p>CISA</p>
+<p>CCSP</p>
+<p>PMP</p>
+</div>
+
+<div class="card">
+<h3>Frameworks</h3>
+<p>COBIT</p>
+<p>ISO 9001</p>
+<p>NIST AI RMF</p>
+</div>
+
+<div class="card">
+<h3>Learning Platforms</h3>
+<p>Microsoft Learn</p>
+<p>ISACA Resources</p>
+<p>Industry Research</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section>
+
+<div class="container">
+
+<h2>Let's Connect</h2>
+
+<p>
+Open to conversations about Quality Governance,
+Operational Excellence and AI Transformation.
+</p>
+
+<br>
+
+<p>
+LinkedIn |
+GitHub |
+Professional Network
+</p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<h3>Ying Xu</h3>
+
+<p>
+Quality Governance • Program Leadership • AI Transformation
+</p>
+
+<br>
+
+<p>
+© 2026 Ying Xu
+</p>
+
+</div>
 
 </body>
 </html>
